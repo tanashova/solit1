@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minerals.AI - ARCGIS</title>
+
+  <!-- bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="assets/css/envyicon.min.css" />
+  <link rel="stylesheet" href="assets/css/animate.min.css" />
+  <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="assets/css/theme-dark.css" />
+
+  <link rel="icon" href="assets/img/logos/favicon.png" type="image/png" sizes="16x16" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css" />
+  <script src="https://js.arcgis.com/4.29/"></script>
+</head>
+
+<body>
+<header class="navbar-area nav-style-two">
+    <div class="mobile-nav">
+        <a href="index_kz.html" class="logo">
+            <img src="assets/img/logos/logo_light.png" alt="logo_light" />
+            <img src="assets/img/logos/logo_dark.png" alt="logo-dark" />
+        </a>
+    </div>
+
+    <div class="main-nav">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index_kz.html">
+                    <img src="assets/img/logos/logo_light.png" alt="logo_light" />
+                    <img src="assets/img/logos/logo_dark.png" alt="logo-dark" />
+                </a>
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">   
+                        <li class="nav-item">
+                            <a href="index_kz.html" class="nav-link">БАСТЫ БЕТ</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a href="arcgis_map_kz.html" class="nav-link active dropdown-toggle">ArcGIS КАРТАСЫ</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="https://mineral-ai.kz/portal/home/index.html" class="nav-link">ArcGIS Enterprise</a>
+                                </li>
+                            </ul>
+                        </li> 
+                        <li class="nav-item">
+                            <a href="about_kz.html" class="nav-link dropdown-toggle">ЖОБА ТУРАЛЫ</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="about_kz.html" class="nav-link">ЖОБА ТУРАЛЫ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="about-details_kz.html" class="nav-link">БАҒДАРЛАМА МІНДЕТТЕРІ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="results_kz.html" class="nav-link">НӘТИЖЕЛЕР</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="news_kz.html" class="nav-link">ЖАҢАЛЫҚТАР</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a href="team_kz.html" class="nav-link">ОРЫНДАУШЫЛАР</a>
+                        </li> 
+                        <li class="nav-item">
+                                <a href="arcgis_map_kz.html" class="nav-link dropdown-toggle">ТІЛІ</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="arcgis_map_kz.html" class="nav-link">ҚАЗАҚША</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="arcgis_map_en.html" class="nav-link">ENGLISH</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="arcgis_map.html" class="nav-link">РУССКИЙ</a>
+                                    </li>
+                                </ul>
+                                </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="page-title-area bg-thin">
+    <div class="container">
+        <div class="page-title-content">
+            <h1>ARCGIS</h1>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section>
+        <br>
+        <h2 style="text-align: center;">Минералогиялық қабаттары бар ArcGIS картасы</h2>
+    </section>
+
+    <div id="viewDiv">
+        <div id="coords">X: -, Y: -</div>
+    </div>
+
+    <section>
+        <h2>ESRI дегеніміз не?</h2>
+        <p>
+            <strong>ESRI (Environmental Systems Research Institute)</strong> — 1969 жылы АҚШ-та құрылған, геоақпараттық жүйелерді (ГАЖ) әзірлеу саласындағы әлемдік көшбасшы компания. Оның негізгі өнімі — ArcGIS — бүкіл әлемде кеңінен қолданылады.
+        </p>
+        <ul>
+            <li><strong>Кәсіби шешімдер:</strong> мемлекеттік органдар мен ірі компаниялар белсенді қолданады.</li>
+            <li><strong>ArcGIS — бұл тұтас платформа:</strong> карта жасау, деректерді талдау, визуализация және жариялау бір жүйеде.</li>
+            <li><strong>Халықаралық ауқым:</strong> ГАЖ нарығының шамамен 45%-ы, 4000-нан астам қызметкер, бас кеңсесі — Редлендс, Калифорния.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>ArcGIS Pro — заманауи үстелдік ГАЖ</h2>
+        <p>
+            <strong>ArcGIS Pro</strong> — ESRI компаниясының 2D және 3D карталармен кәсіби жұмыс істеуге арналған бағдарламалық өнімі. Ол ArcMap-ты толық алмастырып, кеңейтілген мүмкіндіктер ұсынады.
+        </p>
+        <ul>
+            <li><strong>2D, 3D және 4D визуализация:</strong> бір жобада бірнеше карта мен көрініс.</li>
+            <li><strong>Қашықтан зондтау:</strong> спутниктік және дрон суреттерімен жұмыс.</li>
+            <li><strong>Smart Mapping:</strong> интеллектуалды стильдеу және интерактивті дизайн.</li>
+            <li><strong>Процестерді автоматтандыру:</strong> Python 3, ModelBuilder және SDK көмегімен.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Қысқаша салыстырмалы кесте</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Бағдарлама</th>
+                    <th>ESRI</th>
+                    <th>ArcGIS Pro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Құрылған жылы</td>
+                    <td>1969, АҚШ (Редлендс)</td>
+                    <td>ArcMap мұрагері</td>
+                </tr>
+                <tr>
+                    <td>Мақсаты</td>
+                    <td>ГАЖ платформаларын әзірлеу</td>
+                    <td>2D/3D визуализация және талдау</td>
+                </tr>
+                <tr>
+                    <td>Құралдар</td>
+                    <td>ArcGIS Online, Enterprise, StoryMaps</td>
+                    <td>ModelBuilder, Python, бейнелермен жұмыс құралдары</td>
+                </tr>
+                <tr>
+                    <td>Жобалармен жұмыс</td>
+                    <td>Ортақ пайдалану, деректерді басқару</td>
+                    <td>.aprx жобалары, бірнеше карта, порталға қосылу</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer class="footer-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                <div class="footer-widget">
+                    <h6>НАВИГАЦИЯ</h6>
+                    <ul class="footer-quick-links">
+                        <li><a href="about.html">ЖОБА ТУРАЛЫ</a></li>
+                        <li><a href="news.html">ЖАҢАЛЫҚТАР</a></li>
+                        <li><a href="team.html">ОРЫНДАУШЫЛАР</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                <div class="footer-widget">
+                    <h6>БІЗ ТУРАЛЫ</h6>
+                    <p>Алматы қ., Қазақстан</p>
+                    <p>Дүйсенбі–Жұма: 9:00–18:00</p>
+                    <p>geology.modeling@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                <div class="footer-widget">
+                    <h6>КАРТАДАҒЫ ОРНЫМЫЗ</h6>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                <div class="footer-widget">
+                    <h6>ФОТОГАЛЕРЕЯ</h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

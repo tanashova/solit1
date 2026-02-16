@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+ <title>Minerals.AI - ARCGIS</title>
+
+  <!-- bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <!-- fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+        <!-- envy icon CSS -->
+        <link rel="stylesheet" href="assets/css/envyicon.min.css" />
+        <!-- animate CSS -->
+        <link rel="stylesheet" href="assets/css/animate.min.css" />
+        <!-- magnific popup CSS -->
+        <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+        <!-- owl-carousel CSS -->
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <!-- meanmenu CSS -->
+        <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
+        <!-- main style CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <!-- responsive CSS -->
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+        <!-- theme dark CSS -->
+        <link rel="stylesheet" href="assets/css/theme-dark.css" />
+
+        <!-- favicon -->
+        <link rel="icon" href="assets/img/logos/favicon.png" type="image/png" sizes="16x16" />
+         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css" />
+  <script src="https://js.arcgis.com/4.29/"></script>
+  <style>
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+    }
+
+    #viewDiv {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+
+    #coords {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      z-index: 99;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    table th, table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    table th {
+      background-color: #ecf0f1;
+    }
+    .footer-gallery img {
+                width: 90px;
+                margin: 3px;
+                border-radius: 5px;
+            }
+  </style>
+</head>
+<body>
+    <header class="navbar-area nav-style-two">
+            <!-- menu for mobile device -->
+            <div class="mobile-nav">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logos/logo_light.png" alt="logo_light" />
+                    <img src="assets/img/logos/logo_dark.png" alt="logo-dark" />
+                </a>
+            </div>
+            <!-- Menu for desktop device-->
+            <div class="main-nav">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/img/logos/logo_light.png" alt="logo_light" />
+                            <img src="assets/img/logos/logo_dark.png" alt="logo-dark" />
+                        </a>
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto">   
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link">ГЛАВНАЯ</a>
+                                </li> 
+                                <li class="nav-item">
+                                    <a href="arcgis_map.html" class="nav-link active dropdown-toggle">ArcGIS КАРТА</a>
+                                     <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="https://mineral-ai.kz/portal/home/index.html" class="nav-link ">ArcGIS Enterprise</a>
+                                        </li>
+                                    </ul>
+                                </li> 
+                                <li class="nav-item">
+                                    <a href="about.html" class="nav-link dropdown-toggle">О ПРОЕКТЕ</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="about.html" class="nav-link">О ПРОЕКТЕ</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="about-details.html" class="nav-link">ЗАДАЧИ ПРОГРАММЫ</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="results.html" class="nav-link ">РЕЗУЛЬТАТЫ</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                 <li class="nav-item">
+                                    <a href="news.html" class="nav-link">НОВОСТИ</a>
+                                </li> 
+                                 <li class="nav-item">
+                                    <a href="team.html" class="nav-link">ИСПОЛНИТЕЛИ</a>
+                                </li> 
+                                 <li class="nav-item">
+                                <a href="arcgis_map.html" class="nav-link dropdown-toggle">ЯЗЫК</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="arcgis_map_kz.html" class="nav-link">ҚАЗАҚША</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="arcgis_map_en.html" class="nav-link">ENGLISH</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="arcgis_map.html" class="nav-link">РУССКИЙ</a>
+                                    </li>
+                                </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+    </header>
+    <div class="page-title-area bg-thin">
+            <div class="container">
+                <div class="page-title-content">
+                    <h1>ARCGIS</h1>
+                </div>
+            </div>
+            <div class="shape">
+                <span class="shape1"></span>
+                <span class="shape2"></span>
+                <span class="shape3"></span>
+                <span class="shape4"></span>
+            </div>
+        </div>
+    <main>
+        <section>
+            <br>
+            <h2 style="text-align: center;">Карта ArcGIS с минералогическими слоями</h2>
+        </section>
+        <div id="viewDiv">
+            <div id="coords">X: -, Y: -</div>
+        </div>
+
+        <section>
+            <h2>Что такое ESRI?</h2>
+            <p>
+                <strong>ESRI (Environmental Systems Research Institute)</strong> — компания, основанная в 1969 году в США, является мировым лидером в разработке геоинформационных систем (ГИС). Её главный продукт — ArcGIS — широко используется по всему миру.
+            </p>
+            <ul>
+                <li><strong>Профессиональные решения:</strong> активно применяются государственными структурами и крупными компаниями.</li>
+                <li><strong>ArcGIS — это целая платформа:</strong> создание карт, анализ данных, визуализация и публикация в одном решении.</li>
+                <li><strong>Международное присутствие:</strong> 45% мирового рынка ГИС, более 4000 сотрудников, штаб-квартира — Редлендс, Калифорния.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ArcGIS Pro — современная настольная ГИС</h2>
+            <p>
+                <strong>ArcGIS Pro</strong> — это программное обеспечение от ESRI для профессиональной работы с 2D и 3D картами. Оно полностью заменяет ArcMap и предлагает расширенные функции.
+            </p>
+            <ul>
+                <li><strong>Визуализация в 2D, 3D и 4D:</strong> несколько карт и видов в одном проекте.</li>
+                <li><strong>Дистанционное зондирование:</strong> работа со спутниковыми и дрон-снимками.</li>
+                <li><strong>Smart Mapping:</strong> интеллектуальная стилизация и интерактивный дизайн.</li>
+                <li><strong>Автоматизация процессов:</strong> с помощью Python 3, ModelBuilder и SDK.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Краткая сравнительная таблица</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Программа</th>
+                        <th>ESRI</th>
+                        <th>ArcGIS Pro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Год основания</td>
+                        <td>1969, США (Редлендс)</td>
+                        <td>Приемник ArcMap</td>
+                    </tr>
+                    <tr>
+                        <td>Назначение</td>
+                        <td>Разработка геоинформационных платформ</td>
+                        <td>2D/3D визуализация и анализ</td>
+                    </tr>
+                    <tr>
+                        <td>Инструменты</td>
+                        <td>ArcGIS Online, Enterprise, StoryMaps</td>
+                        <td>ModelBuilder, Python, инструменты для работы с изображениями</td>
+                    </tr>
+                    <tr>
+                        <td>Работа с проектами</td>
+                        <td>Совместное использование, управление данными</td>
+                        <td>Проекты .aprx, множество карт, подключение к порталу</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="footer-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                     <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h6>НАВИГАЦИЯ</h6>
+                            <br>
+                            <ul class="footer-quick-links">
+                                <li>
+                                    <a href="about.html">О ПРОЕКТЕ</a>
+                                </li>
+                                <li>
+                                    <a href="news.html">НОВОСТИ</a>
+                                </li>
+                                <li>
+                                    <a href="team.html">ИСПОЛНИТЕЛИ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h6>ПРО НАС</h6>
+                            <div class="contact-info">
+                                <i class="envy envy-pin"></i>
+                                <p>г. Алматы, Казахстан.</p>
+                            </div>
+                            <div class="contact-info">
+                                <i class="envy envy-call"></i>
+                                <p>
+                                    <a href="#">Понедельник-Пятница : 9:00-18:00</a>
+                                </p>
+                            </div>
+                            <div class="contact-info">
+                                <i class="envy envy-plane"></i>
+                                <p>
+                                    <a href="mailTo:geology.modeling@gmail.com">geology.modeling@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                        <div class="footer-widget">
+                             <h6>МЫ НА КАРТЕ</h6>
+                            <div class="footer-map">
+                                    <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1453.9906989449182!2d76.90745281114357!3d43.20987950069326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369492e5616d9%3A0x85751486ee0fd1b2!2z0KXQvtC00LbQsNC90L7QstCwIDY3!5e0!3m2!1sru!2skz!4v1749105056467!5m2!1sru!2skz" 
+                                    width="220" 
+                                    height="140" 
+                                    style="border:0;" 
+                                    allowfullscreen=""
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>" 
+                            </div>
+                        </div>
+                    </div>   
+                    
+                    <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h6>ФОТО-ГАЛЕРЕЯ</h6>
+                            <div class="footer-gallery">
+                                <img src="images/news/photo.jpg" alt="Фото 1">
+                                <img src="images/news/photo2.jpg" alt="Фото 2">
+                                <img src="images/news/photo3.jpg" alt="Фото 3">
+                                <img src="images/news/photo4.gif" alt="Фото 4">
+                                <img src="images/news/photo5.jpg" alt="Фото 5">
+                                <img src="images/news/photo6.jpg" alt="Фото 6">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </footer>
+
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView"
+        ], function(Map, MapView) {
+            const map = new Map({
+            basemap: "topo-vector"
+            });
+
+            const view = new MapView({
+            container: "viewDiv",
+            map: map,
+            center: [82.6059, 49.9714], 
+            zoom: 10
+            });
+
+            const coords = document.getElementById("coords");
+
+            view.on("pointer-move", function(event) {
+            const point = view.toMap({ x: event.x, y: event.y });
+            if (point) {
+                const lon = point.longitude.toFixed(5);
+                const lat = point.latitude.toFixed(5);
+                coords.innerText = `X: ${lon}, Y: ${lat}`;
+            }
+            });
+        });
+    </script>
+</body>
+</html>

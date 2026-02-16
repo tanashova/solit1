@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Author: HiBootstrap Theme, Category: IT, Multipurpose, HTML, SASS" />
+        <!-- title -->
+        <title>Minerals.AI - Басты бет</title>
+        <!-- bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <!-- fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+        <!-- envy icon CSS -->
+        <link rel="stylesheet" href="assets/css/envyicon.min.css" />
+        <!-- animate CSS -->
+        <link rel="stylesheet" href="assets/css/animate.min.css" />
+        <!-- magnific popup CSS -->
+        <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+        <!-- owl-carousel CSS -->
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+        <!-- meanmenu CSS -->
+        <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
+        <!-- main style CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <!-- responsive CSS -->
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+        <!-- theme dark CSS -->
+        <link rel="stylesheet" href="assets/css/theme-dark.css" />
+        <!-- favicon -->
+        <link rel="icon" href="assets/img/logos/favicon.png" type="image/png" sizes="16x16" />
+        <style>
+            .footer-gallery img {
+            width: 90px;
+            margin: 3px;
+            border-radius: 5px;
+        }
+
+        :root{
+    --accent: #5b2cff;          /* фиолетовый акцент */
+    --accent-dark: #3b1bb6;
+    --text: #1f2430;
+    --muted: #667085;
+    --card: #ffffff;
+    --bg: transparent;
+    --border: rgba(17, 24, 39, 0.10);
+    --shadow: 0 14px 40px rgba(17, 24, 39, 0.10);
+    --shadow2: 0 10px 24px rgba(91, 44, 255, 0.18);
+    --radius: 18px;
+  }
+
+  .conference-section{
+    background: var(--bg);
+    padding: 22px 0;
+  }
+
+  .conference-container{
+    width: min(1080px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .conference-card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px 22px 18px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* декоративная линия сверху (не кричащая) */
+  .conference-card::before{
+    content:"";
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), rgba(91,44,255,0.15));
+  }
+
+
+  .conference-title{
+    margin: 0 0 10px 0;
+    font-size: clamp(20px, 2.4vw, 28px);
+    line-height: 1.15;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+
+
+  /* ВАЖНО: выравнивание по левому краю */
+  .conference-text{
+    text-align: left;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .conference-text p{
+    margin: 0 0 12px 0;
+    color: #2b3140;
+  }
+
+  .conference-subtitle{
+    margin: 14px 0 10px 0;
+    font-size: 16px;
+    color: var(--text);
+  }
+
+  .conference-list{
+    margin: 0;
+    padding-left: 18px;
+    color: #2b3140;
+  }
+
+  .conference-list li{
+    margin: 6px 0;
+  }
+
+  .conference-actions{
+    margin-top: 16px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .conference-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    border-radius: 999px;
+    padding: 14px 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    box-shadow: var(--shadow2);
+    transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .conference-btn:hover{
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+    box-shadow: 0 14px 28px rgba(91, 44, 255, 0.24);
+  }
+
+  .btn-arrow{
+    font-size: 16px;
+    line-height: 1;
+    opacity: 0.95;
+  }
+
+  .conference-link{
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .conference-link a{
+    color: var(--accent-dark);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(59, 27, 182, 0.35);
+  }
+
+  .conference-link a:hover{
+    border-bottom-color: rgba(59, 27, 182, 0.8);
+  }
+
+  .link-label{
+    opacity: 0.9;
+  }
+
+  /* адаптация под мобильный */
+  @media (max-width: 560px){
+    .conference-card{
+      padding: 18px 16px 14px;
+    }
+    .conference-btn{
+      width: 100%;
+    }
+  }
+        </style>
+    </head>
+    <body>
+<!-- start preloader area-->
+<div class="preloader-main">
+  <div class="loader">
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+  </div>
+</div>
+<!--end preloader area -->
+
+<!-- Start header Area -->
+<header class="navbar-area nav-style-two">
+  <!-- menu for mobile device -->
+  <div class="mobile-nav">
+    <a href="index_kz.html" class="logo">
+      <img src="assets/img/logos/logo_light.png" alt="logo_light" />
+      <img src="assets/img/logos/logo_dark.png" alt="logo-dark" />
+    </a>
+  </div>
+
+  <!-- Menu for desktop device-->
+  <div class="main-nav">
+    <nav class="navbar navbar-expand-md navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="index_kz.html">
+          <img src="assets/img/logos/logo_light.png" alt="logo_light" />
+          <img src="assets/img/logos/logo_dark.png" alt="logo-dark" />
+        </a>
+
+        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="index_kz.html" class="nav-link active">БАСТЫ БЕТ</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="arcgis_map_kz.html" class="nav-link dropdown-toggle">ArcGIS КАРТАСЫ</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a href="https://mineral-ai.kz/portal/home/index.html" class="nav-link">ArcGIS Enterprise</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="about_kz.html" class="nav-link dropdown-toggle">ЖОБА ТУРАЛЫ</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a href="about_kz.html" class="nav-link">ЖОБА ТУРАЛЫ</a>
+                </li>
+                <li class="nav-item">
+                  <a href="about-details_kz.html" class="nav-link">ЖОБА МІНДЕТТЕРІ</a>
+                </li>
+                <li class="nav-item">
+                  <a href="results_kz.html" class="nav-link">НӘТИЖЕЛЕР</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="news_kz.html" class="nav-link">ЖАҢАЛЫҚТАР</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="team_kz.html" class="nav-link">ОРЫНДАУШЫЛАР</a>
+            </li>
+             <li class="nav-item">
+                                <a href="index_kz.html" class="nav-link dropdown-toggle">ТІЛІ</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="index_kz.html" class="nav-link">ҚАЗАҚША</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index_en.html" class="nav-link">ENGLISH</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index.html" class="nav-link">РУССКИЙ</a>
+                                    </li>
+                                </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- end header area -->
+
+<!-- start home banner area -->
+<div id="home" class="home-banner-area banner-type-one">
+  <div class="home-slider owl-carousel">
+
+    <div class="item">
+      <div class="container">
+        <div class="banner-content">
+          <h1> BR27100483 </h1>
+          <p>
+            ЖАСАНДЫ ИНТЕЛЛЕКТ ЖӘНЕ ЖЕРДІ ҚАШЫҚТАН ЗОНДТАУ ӘДІСТЕРІН ҚОЛДАНУ АРҚЫЛЫ
+            «MINERALS.GOV.KZ» ЖЕР ҚОЙНАУЫН ПАЙДАЛАНУШЫЛАРДЫҢ БІРЫҢҒАЙ ПЛАТФОРМАСЫ
+            ДЕРЕКТЕРІН ТАЛДАУ НЕГІЗІНДЕ КЕНГЕ БОЛАШАҒЫ БАР АУМАҚТАРДЫ БӨЛІП КӨРСЕТУГЕ
+            АРНАЛҒАН БОЛЖАМДЫ-ІЗДЕУ ТЕХНОЛОГИЯЛАРЫН ӘЗІРЛЕУ
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="container">
+        <div class="banner-content">
+          <h1> BR27100483 </h1>
+          <p>
+            ЖАСАНДЫ ИНТЕЛЛЕКТ ЖӘНЕ ЖЕРДІ ҚАШЫҚТАН ЗОНДТАУ ӘДІСТЕРІН ҚОЛДАНУ АРҚЫЛЫ
+            «MINERALS.GOV.KZ» ЖЕР ҚОЙНАУЫН ПАЙДАЛАНУШЫЛАРДЫҢ БІРЫҢҒАЙ ПЛАТФОРМАСЫ
+            ДЕРЕКТЕРІН ТАЛДАУ НЕГІЗІНДЕ КЕНГЕ БОЛАШАҒЫ БАР АУМАҚТАРДЫ БӨЛІП КӨРСЕТУГЕ
+            АРНАЛҒАН БОЛЖАМДЫ-ІЗДЕУ ТЕХНОЛОГИЯЛАРЫН ӘЗІРЛЕУ
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="container">
+        <div class="banner-content">
+          <h1> BR27100483 </h1>
+          <p>
+            ЖАСАНДЫ ИНТЕЛЛЕКТ ЖӘНЕ ЖЕРДІ ҚАШЫҚТАН ЗОНДТАУ ӘДІСТЕРІН ҚОЛДАНУ АРҚЫЛЫ
+            «MINERALS.GOV.KZ» ЖЕР ҚОЙНАУЫН ПАЙДАЛАНУШЫЛАРДЫҢ БІРЫҢҒАЙ ПЛАТФОРМАСЫ
+            ДЕРЕКТЕРІН ТАЛДАУ НЕГІЗІНДЕ КЕНГЕ БОЛАШАҒЫ БАР АУМАҚТАРДЫ БӨЛІП КӨРСЕТУГЕ
+            АРНАЛҒАН БОЛЖАМДЫ-ІЗДЕУ ТЕХНОЛОГИЯЛАРЫН ӘЗІРЛЕУ
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--end home banner area -->
+
+<!-- start promo section -->
+<!-- start ArcGIS button section -->
+<section class="arcgis-section pt-100 pb-100" style="text-align:center;">
+  <div class="container">
+    <h2 style="font-weight:700; margin-bottom:30px;">ArcGIS интерактивті картасы</h2>
+    <p style="max-width:700px; margin:0 auto 40px auto; font-size:18px; color:#444;">
+      Геологиялық деректерді, карталарды және модельдеу нәтижелерін қарау үшін ArcGIS Enterprise платформасына өтіңіз.
+    </p>
+    <a href="https://mineral-ai.kz/portal/apps/mapviewer/index.html" target="_blank" class="big-arcgis-btn">
+      🗺 КАРТАНЫ АШУ
+    </a>
+  </div>
+</section>
+<!-- end ArcGIS button section -->
+
+<section class="goal-section pt-90 pb-70" style="text-align:center;">
+  <div class="container">
+    <h3 style="font-weight:700; margin-bottom:15px;">БАҒДАРЛАМАНЫҢ МАҚСАТЫ</h3>
+    <p style="max-width:600px; margin:0 auto; font-size:18px; line-height:1.6; color:#555;">
+      Жерді қашықтан зондтау әдістері мен жасанды интеллектті қолдана отырып, жер қойнауын пайдаланушылардың бірыңғай платформасы
+      <strong>«Minerals.gov.kz»</strong> (жаңартылған нұсқасы <strong>«minerals.e-qazyna.kz»</strong>) деректерін талдау негізінде
+      кенге болашағы бар аумақтарды айқындауға арналған болжамды-іздеу технологияларын әзірлеу.
+    </p>
+  </div>
+</section>
+
+<section id="about" class="about-section ptb-70">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 col-sm-12 pb-30">
+        <div class="section-title">
+          <span class="subtitle">ЖАҢАЛЫҚТАР</span>
+          <h5>
+            ӘЛ-ФАРАБИ АТЫНДАҒЫ ҚАЗҰУ-ДЕ АКАДЕМИК Ю.И. ШОКИНДІҢ ЕСІМІНЕ АРНАЛҒАН CITECH ХАЛЫҚАРАЛЫҚ КОНФЕРЕНЦИЯСЫ ӨТЕ БАСТАДЫ
+          </h5>
+        </div>
+
+        <div class="about-text-blc">
+          <p>
+            Әл-Фараби атындағы Қазақ ұлттық университетінің механика-математика факультетінде
+            <strong>CITech</strong> халықаралық ғылыми конференциясы өз жұмысын бастады.
+            Конференция қазіргі заманғы есептеу технологияларының Ресей мен ТМД елдеріндегі негізін қалаушылардың бірі —
+            академик <strong>Юрий Иванович Шокиннің</strong> жарқын рухына арналған.
+          </p>
+
+          <h6>Конференцияның өзектілігі</h6>
+          <p>
+            Ашылу барысында Қазақстанда <strong>2026 жылдың Цифрландыру және жасанды интеллект жылы</strong> болып жариялануы
+            конференция тақырыбын айрықша маңызды ететіні атап өтілді.
+            1934 жылы құрылған КазҰУ-дың механика-математика факультетінің математика, механика және есептеу ғылымдарын дамытудағы
+            жетекші рөлі ерекше көрсетілді.
+          </p>
+
+          <h6>Конференцияның негізгі бағыттары:</h6>
+          <ul>
+            <li>есептеу математикасы және сандық әдістер</li>
+            <li>жасанды интеллект және нейрондық желілер</li>
+            <li>күрделі үдерістерді математикалық модельдеу</li>
+            <li>жоғары өнімді есептеулер</li>
+          </ul>
+        </div>
+
+        <div class="cta-btn">
+          <a href="news-details2_kz.html" class="btn btn-solid">
+            ТОЛЫҒЫРАҚ <i class="envy envy-right-arrow"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-12 pb-30">
+        <div class="about-img">
+          <div class="grid-img">
+            <div class="grid-img-inner">
+              <img src="images/news/citech_1.jpg" class="image-responsive" alt="КазҰУ-де CITech конференциясының ашылуы" />
+            </div>
+            <div class="grid-img-inner">
+              <img src="images/news/citech_3.jpg" class="image-responsive" alt="CITech конференциясының пленарлық отырысы" />
+            </div>
+            <div class="grid-img-inner">
+              <img src="images/news/citech_4.jpg" class="image-responsive" alt="CITech конференциясында баяндамашының сөзі" />
+            </div>
+            <div class="grid-img-inner">
+              <img src="images/news/citech_2.jpg" class="image-responsive" alt="CITech халықаралық конференциясының қатысушылары" />
+            </div>
+          </div>
+
+          <div class="logo-overlay">
+            <img src="assets/img/logos/logo.png" alt="logo_without_slogan" />
+          </div>
+
+          <div class="shape">
+            <img src="assets/img/resource/shape_2.png" alt="shape" class="shape-inner" />
+            <img src="assets/img/resource/shape_4.png" alt="shape" class="shape-inner" />
+            <img src="assets/img/resource/shape_2.png" alt="shape" class="shape-inner" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="plenary-report" class="news-section pt-100 pb-70" style="background-color:#f4f6fa;">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Фото (сетка из 3 изображений) -->
+      <div class="col-lg-5 col-md-12 mb-30">
+        <div class="photo-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+          <img src="images/news/14.jpeg" alt="ҒТС отырысындағы Темірбековтің баяндамасы" style="width:100%; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
+          <img src="images/news/16.jpeg" alt="Академик Н.М. Темірбеков" style="width:100%; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
+          <img src="images/news/15.jpeg" alt="А. Сағынов атындағы Қарағанды техникалық университеті" style="grid-column: span 2; width:100%; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
+        </div>
+      </div>
+
+      <!-- Текст справа -->
+      <div class="col-lg-7 col-md-12">
+        <div class="news-content" style="font-size:17px; line-height:1.7; text-align:justify;">
+          <span class="subtitle" style="text-align:left; display:block; font-size:14px; font-weight:600; color:#6c757d;">
+            ЖАҢАЛЫҚТАР
+          </span>
+
+          <h3 style="text-align:left; color:#1a237e; margin-top:10px; font-size:26px; font-weight:700;">
+            ҚР ҰҒА академигі Н.М. Темірбеков А. Сағынов атындағы Қарағанды техникалық университетінің ғылыми-техникалық кеңесі отырысында баяндама жасады
+          </h3>
+
+          <p>
+            2025 жылғы 31 қазанда А. Сағынов атындағы Қарағанды техникалық университетінде Ғылыми-техникалық кеңестің отырысы өтті.
+            Отырыста ҚР ҰҒА академигі, физика-математика ғылымдарының докторы, профессор Нұрлан Мұханович Темірбеков ғылыми баяндамамен сөз сөйледі.
+          </p>
+
+          <p>
+            «Жасанды интеллектті қолдана отырып, кенге болашағы бар техно-объектілерді бөлуге арналған болжамды-іздеу технологияларын әзірлеу»
+            тақырыбындағы баяндама геологиялық деректерді жасанды интеллект пен цифрлық модельдеу әдістері негізінде талдаудың заманауи тәсілдеріне арналды.
+            Баяндамада геолого-геофизикалық ақпаратты өңдеуді автоматтандыру, машиналық оқытуды ұлттық цифрлық платформалармен ықпалдастыру,
+            сондай-ақ геологиялық барлау жұмыстарының тиімділігін арттыру перспективалары қарастырылды.
+          </p>
+
+          <p>
+            Ұсынылған нәтижелер тау-кен факультетінің профессор-оқытушылар құрамы тарапынан үлкен қызығушылық тудырып,
+            белсенді пікірталас пен технологияларды енгізудің практикалық қырларын талқылаумен жалғасты.
+            Қатысушылар баяндаманың ғылыми маңызын, минералдық-шикізат базасын дамытудағы өзектілігін және
+            геоинформатика мен жасанды интеллект саласындағы пәнаралық ынтымақтастық перспективаларын атап өтті.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="plenary-report" class="news-section pt-100 pb-70" style="background-color:#f4f6fa;">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Фото (сетка из 3 изображений) -->
+      <div class="col-lg-5 col-md-12 mb-30">
+        <div class="photo-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <img src="images/news/11.jpeg" alt="Темірбековтің баяндамасы" style="width:100%; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
+          <img src="images/news/12.jpeg" alt="Академик Темірбеков" style="width:100%; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
+          <img src="images/news/10.jpeg" alt="Белокуриха конференциясы" style="grid-column: span 2; width:100%; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
+        </div>
+      </div>
+
+      <!-- Текст справа -->
+      <div class="col-lg-7 col-md-12">
+        <div class="news-content" style="font-size:17px; line-height:1.7; text-align:justify;">
+          <span class="subtitle" style="text-align: left; display:block; font-size:14px; font-weight:600; color:#6c757d;">
+            ЖАҢАЛЫҚТАР
+          </span>
+
+          <h3 style="text-align: left;color:#1a237e; margin-top:10px; font-size:26px; font-weight:700;">
+            ҚР ҰҒА академигі Темірбеков Н.М. Белокурихада пленарлық баяндама жасады
+          </h3>
+
+          <p>
+            Белокуриха қаласында академик Ю.И. Шокиннің рухына арналған
+            <em>«Табиғи және антропогендік үдерістер мониторингі міндеттеріндегі кеңістіктік деректерді өңдеу» (SDM-2025)</em>
+            атты X Бүкілресейлік конференция аясында пленарлық отырыс өтті.
+            Онда <strong>
+              Қазақстан Республикасы Ұлттық академиясының академигі, Қазақстан Республикасы Ұлттық инженерлік академиясының академигі,
+              физика-математика ғылымдарының докторы, профессор Н.М. Темірбеков
+            </strong> баяндама жасады.
+          </p>
+
+          <p>
+            Баяндаманың тақырыбы:
+            <strong>«Жасанды интеллектті қолдана отырып, кенге болашағы бар техно-объектілерді бөлуге арналған болжамды-іздеу технологияларын әзірлеу»</strong>.
+            Профессор геологиялық барлау және табиғи үдерістер мониторингі міндеттеріне ЖИ енгізудің маңызын атап өтті.
+          </p>
+
+          <p>
+            Баяндама конференция қатысушылары арасында кең қызығушылық тудырып,
+            кеңістіктік деректер және тау-кен өнеркәсібіне арналған цифрлық технологиялар саласындағы ғылыми ынтымақтастықты дамытуға үлес қосты.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about-section ptb-70">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 col-sm-12 pb-30">
+        <div class="section-title">
+          <span class="subtitle">ЖАҢАЛЫҚТАР</span>
+          <h5>
+            ҚАЗАҚСТАН РЕСПУБЛИКАСЫ ҰЛТТЫҚ ИНЖЕНЕРЛІК АКАДЕМИЯСЫНДА ГЕОЛОГИЯ МЕН ГЕОФИЗИКАДАҒЫ ЕСЕПТЕУ ТЕХНОЛОГИЯЛАРЫ БОЙЫНША ҒЫЛЫМИ ВЕБИНАР ӨТКІЗІЛДІ
+          </h5>
+        </div>
+
+        <div class="about-text-blc">
+          <p>
+            2025 жылғы 4 сәуірде Қазақстан Республикасының Ұлттық инженерлік академиясында (НИА РК)
+            «Геология және геофизикадағы есептеу ақпараттық технологиялары» тақырыбында ғылыми вебинар өтті.
+            Іс-шара гибридті форматта ұйымдастырылып, Қазақстан, Украина және АҚШ елдерінен жетекші ғалымдарды біріктірді.
+          </p>
+
+          <h6>Негізгі тақырыптар мен нәтижелер</h6>
+          <p>
+            Вебинардың модераторлары академиктер Б.Т. Жұмағұлов және Н.М. Темірбеков болды.
+            Құттықтау сөзінде Б.Т. Жұмағұлов цифрлық технологиялар мен интеллектуалдық жүйелердің қазіргі геологиядағы маңызын атап өтті,
+            сондай-ақ ҚР Президенті Қ.Тоқаевтың бастамасымен қолға алынған Қазақстанның Ұлттық геологиялық қызметін құрудың өзектілігін ерекше көрсетті.
+          </p>
+
+          <h6>Вебинарда келесі өзекті мәселелер талқыланды:</h6>
+          <ul>
+            <li>геологиялық деректерді цифрландыру</li>
+            <li>геологиялық барлауға жасанды интеллектті енгізу</li>
+            <li>минералдық ресурстардың ұлттық деректер банкін құру</li>
+            <li>жаңа болжамды модельдер мен геоақпараттық жүйелерді әзірлеу</li>
+          </ul>
+        </div>
+
+        <div class="cta-btn">
+          <a href="news-details_kz.html" class="btn btn-solid">
+            ТОЛЫҒЫРАҚ <i class="envy envy-right-arrow"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-12 pb-30">
+        <div class="about-img">
+          <div class="grid-img">
+            <div class="grid-img-inner">
+              <img src="assets/img/about/1.png" class="image-responsive" alt="office_image" />
+            </div>
+            <div class="grid-img-inner">
+              <img src="assets/img/about/3.png" class="image-responsive" alt="office_image" />
+            </div>
+            <div class="grid-img-inner">
+              <img src="assets/img/about/7.png" class="image-responsive" alt="office_image" />
+            </div>
+            <div class="grid-img-inner">
+              <img src="assets/img/about/2.png" class="image-responsive" alt="office_image" />
+            </div>
+          </div>
+
+          <div class="logo-overlay">
+            <img src="assets/img/logos/logo.png" alt="logo_without_slogan" />
+          </div>
+
+          <div class="shape">
+            <img src="assets/img/resource/shape_2.png" alt="shape" class="shape-inner" />
+            <img src="assets/img/resource/shape_4.png" alt="shape" class="shape-inner" />
+            <img src="assets/img/resource/shape_2.png" alt="shape" class="shape-inner" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--end about section-->
+
+<!--start service section-->
+<section id="featured-service" class="featured-service-section pt-100 pb-70 bg-light">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6 col-sm-12 col-md-12 pb-30">
+        <img src="images/news/1.jpeg" style=" display: block; margin-left: auto; margin-right: 0;width:600px; height: auto;" alt="service_illustration" />
+      </div>
+
+      <div class="col-lg-6 col-sm-12 col-md-12">
+        <div class="featured-service-content">
+          <div class="section-title">
+            <span class="subtitle">ЖАҢАЛЫҚТАР</span>
+            <h5>ҚАЗАҚСТАН РЕСПУБЛИКАСЫ ҰЛТТЫҚ ИНЖЕНЕРЛІК АКАДЕМИЯСЫНДА ГЕОЛОГИЯДА ЖАСАНДЫ ИНТЕЛЛЕКТТІ ҚОЛДАНУ МӘСЕЛЕЛЕРІ БОЙЫНША КЕҢЕС ӨТТІ</h5>
+            <p>
+              2025 жылғы 3 маусымда Қазақстан Республикасының Ұлттық инженерлік академиясының қабырғасында
+              «Ұлттық геологиялық қызмет» АҚ өкілдері мен геология және цифрлық технологиялар саласындағы жетекші мамандардың қатысуымен
+              гибридті форматта кеңес өтті. Кеңес аралас (онлайн және офлайн) форматта ұйымдастырылды.
+              Қатысушылар геологиялық барлау және геофизикалық зерттеулерге жасанды интеллект технологияларын енгізудің өзекті мәселелерін талқылады.
+            </p>
+          </div>
+
+          <div class="cta-btn">
+            <a href="news-details_kz.html" class="btn btn-solid">
+              ТОЛЫҒЫРАҚ <i class="envy envy-right-arrow"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--end service section-->
+
+<!--start about section-->
+<section id="news3" class="about-section ptb-70">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 col-sm-12 pb-30">
+        <div class="section-title">
+          <span class="subtitle">ЖАҢАЛЫҚТАР</span>
+          <h5>ЖОБА БОЙЫНША ЖҰМЫС КЕҢЕСІ: ІСКЕ АСЫРУ БАРЫСЫН ТАЛДАУ ЖӘНЕ АЛДАҒЫ ӘРЕКЕТТЕРДІ ҮЙЛЕСТІРУ</h5>
+        </div>
+
+        <div class="about-text-blc">
+          <p>
+            2025 жылғы 15 мамырда Қазақстан Республикасының Ұлттық инженерлік академиясында
+            цифрлық технологиялар және геоақпараттық жүйелер департаменті аясында жүзеге асырылып жатқан жоба бойынша
+            барлық орындаушылардың қатысуымен гибридті форматта жұмыс кеңесі өтті.
+          </p>
+          <p>
+            Кеңес барысында әр бағыт бойынша орындалған жұмыстардың аралық нәтижелері ұсынылды.
+            Қатысушылар ағымдағы міндеттерді талқылап, проблемалық тұстарды белгіледі және оларды шешу жолдарын ұсынды.
+            Ерекше назар топтар арасындағы өзара әрекеттестік және келесі кезеңдердің орындалу мерзімдерін келісу мәселелеріне аударылды.
+          </p>
+          <p>
+            Кездесу қорытындысы бойынша жобаны одан әрі іске асыруға және команда үйлесімін күшейтуге бағытталған нақты қадамдар айқындалды.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-12 pb-30">
+        <div class="about-img">
+          <div class="grid-img">
+            <div class="grid-img-inner">
+              <img src="images/news/6.jpeg" class="image-responsive" alt="office_image" />
+            </div>
+            <div class="grid-img-inner">
+              <img src="images/news/9.jpeg" class="image-responsive" alt="office_image" />
+            </div>
+            <div class="grid-img-inner">
+              <img src="images/news/8.jpeg" class="image-responsive" alt="office_image" />
+            </div>
+            <div class="grid-img-inner">
+              <img src="images/news/7.jpeg" class="image-responsive" alt="office_image" />
+            </div>
+          </div>
+
+          <div class="logo-overlay">
+            <img src="assets/img/logos/logo.png" alt="logo_without_slogan" />
+          </div>
+
+          <div class="shape">
+            <img src="assets/img/resource/shape_2.png" alt="shape" class="shape-inner" />
+            <img src="assets/img/resource/shape_4.png" alt="shape" class="shape-inner" />
+            <img src="assets/img/resource/shape_2.png" alt="shape" class="shape-inner" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--end about section-->
+
+<!-- Start Partner Area -->
+<div class="partner-area ptb-50">
+  <div class="container">
+    <div class="partner-slider owl-carousel">
+      <div class="partner-item">
+        <img src="assets/img/logos/logo_dark.png" alt="image" />
+        <img src="assets/img/logos/logo_light.png" alt="partner" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/logos/logo_dark.png" alt="image" />
+        <img src="assets/img/logos/logo_light.png" alt="partner" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/logos/logo_dark.png" alt="image" />
+        <img src="assets/img/logos/logo_light.png" alt="partner" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/logos/logo_dark.png" alt="image" />
+        <img src="assets/img/logos/logo_light.png" alt="partner" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/logos/logo_dark.png" alt="image" />
+        <img src="assets/img/logos/logo_light.png" alt="partner" />
+      </div>
+      <div class="partner-item">
+        <img src="assets/img/logos/logo_dark.png" alt="image" />
+        <img src="assets/img/logos/logo_light.png" alt="partner" />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end partner area -->
+
+<!-- start footer area -->
+<footer class="footer-area pt-100 pb-70">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+        <div class="footer-widget">
+          <h6>НАВИГАЦИЯ</h6>
+          <br>
+          <ul class="footer-quick-links">
+            <li><a href="about_kz.html">ЖОБА ТУРАЛЫ</a></li>
+            <li><a href="news_kz.html">ЖАҢАЛЫҚТАР</a></li>
+            <li><a href="team_kz.html">ОРЫНДАУШЫЛАР</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+        <div class="footer-widget">
+          <h6>БІЗ ТУРАЛЫ</h6>
+          <div class="contact-info">
+            <i class="envy envy-pin"></i>
+            <p>Алматы қ., Қазақстан.</p>
+          </div>
+          <div class="contact-info">
+            <i class="envy envy-call"></i>
+            <p><a href="#">Дүйсенбі–Жұма : 9:00–18:00</a></p>
+          </div>
+          <div class="contact-info">
+            <i class="envy envy-plane"></i>
+            <p><a href="mailTo:geology.modeling@gmail.com">geology.modeling@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+        <div class="footer-widget">
+          <h6>БІЗ КАРТАДА</h6>
+          <div class="footer-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1453.9906989449182!2d76.90745281114357!3d43.20987950069326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369492e5616d9%3A0x85751486ee0fd1b2!2z0KXQvtC00LbQsNC90L7QstCwIDY3!5e0!3m2!1sru!2skz!4v1749105056467!5m2!1sru!2skz" width="220" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+        <div class="footer-widget">
+          <h6>ФОТОГАЛЕРЕЯ</h6>
+          <div class="footer-gallery">
+            <img src="images/news/photo.jpg" alt="Фото 1">
+            <img src="images/news/photo2.jpg" alt="Фото 2">
+            <img src="images/news/photo3.jpg" alt="Фото 3">
+            <img src="images/news/photo4.gif" alt="Фото 4">
+            <img src="images/news/photo5.jpg" alt="Фото 5">
+            <img src="images/news/photo6.jpg" alt="Фото 6">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+<!-- end footer area -->
+
+<!-- jequery JS -->
+<script src="assets/js/jquery.min.js"></script>
+<!-- jequery JS -->
+<script src="assets/js/jquery.min.js"></script>
+<!-- bootstrap JS -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<!-- magnific popup JS -->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<!-- owl carousel JS -->
+<script src="assets/js/owl.carousel.min.js"></script>
+<!-- meanmenu JS -->
+<script src="assets/js/meanmenu.min.js"></script>
+<!-- form validator -->
+<script src="assets/js/form-validator.min.js"></script>
+<!-- contact form JS -->
+<script src="assets/js/contact-form-script.js"></script>
+<!-- ajaxchimp JS -->
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- main JS -->
+<script src="assets/js/main.js"></script>
+</body>
+
+</html>
